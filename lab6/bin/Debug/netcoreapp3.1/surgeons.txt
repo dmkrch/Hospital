@@ -1,0 +1,38 @@
+George
+27
+5
+II middle
+Docent
+///////////////
+Laparoscopy
+**
+29
+6
+///////////////
+Appendectomy
+***
+56	
+8
+///////////////
+Hernia Repair
+*****
+12
+3
+--------------------------
+Michael
+35
+10
+I middle
+Docent
+///////////////
+Appendectomy
+***
+108		
+14
+///////////////
+Hernia Repair
+*****
+24
+5
+--------------------------
+eof
