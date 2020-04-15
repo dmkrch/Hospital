@@ -3,6 +3,9 @@ George
 5
 II middle
 Docent
+Sunday
+Friday
+Tuesday
 ///////////////
 Laparoscopy
 **
@@ -24,6 +27,7 @@ Michael
 10
 I middle
 Docent
+Saturday
 ///////////////
 Appendectomy
 ***
@@ -34,5 +38,76 @@ Hernia Repair
 *****
 24
 5
+--------------------------
+Alfred
+48
+25
+I highest
+Proffesor
+Monday
+Wednesday
+///////////////
+Endoscopy
+*****
+43
+10
+///////////////
+Hernia Repair
+*****
+21
+7
+///////////////
+Tracheostomy
+*
+78	
+8
+///////////////
+Appendectomy
+***
+203		
+14
+--------------------------
+Smith
+55
+33
+I highest
+Proffesor
+Thursday
+Friday
+///////////////
+Endoscopy
+*****
+76	
+9
+///////////////
+Tracheostomy
+*
+98	
+2
+--------------------------
+Miller 
+24
+2
+III lowest
+Candidate of Science
+Sunday
+Monday
+Tuesday
+Wednesday
+///////////////
+Laparoscopy
+**
+25
+0
+///////////////
+Appendectomy
+***
+50	
+100
+///////////////
+Tracheostomy
+*
+56	
+3
 --------------------------
 eof

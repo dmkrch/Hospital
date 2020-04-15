@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace doctor
+namespace lab6
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace doctor
             {
                 int id;
 
-                Console.WriteLine("-------------------------------\n|  #1 Show info of surgeon    |\n|  #2 Find appropriate doctor |\n|  #3 Make an operation       |\n|  #4 Exit\t\t      |\n-------------------------------");
+                Console.WriteLine("---------------------------------\n|  #1 Show info of surgeon      |\n|  #2 Sort operations by length |\n|  #3 Sort operations by name   |\n|  #4 Find appropriate doctor   |\n|  #5 Make an operation         |\n|  #6 Exit\t\t        |\n---------------------------------");
                 int choice = Int32.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -40,8 +40,23 @@ namespace doctor
 
                         break;
 
-
                     case 2:
+
+                        Console.Clear();
+                        surgeonList.SortOpByLength();
+                        Console.Write("Operations have been sorted !\n\n");
+                        
+                        break;
+
+                    case 3:
+
+                        Console.Clear();
+                        surgeonList.SortOpByName();
+                        Console.Write("Operations have been sorted !\n\n");
+
+                        break;
+
+                    case 4:
 
                         Console.Clear();
 
@@ -56,18 +71,19 @@ namespace doctor
                             Console.WriteLine("The best surgeon compared to others would be #" + (id + 1) + "  " + surgeonList.GetName(id));
                         }
 
-                        else
+                        else if (id != -2)
                         {
                             Console.WriteLine("Noone performs such operation");
                         }
 
+                        
                         Console.ReadLine();
                         Console.Clear();
 
                         break;
 
 
-                    case 3:
+                    case 5:
 
                         Console.Clear();
 
@@ -92,7 +108,7 @@ namespace doctor
                         break;
 
 
-                    case 4:
+                    case 6:
 
                         Environment.Exit(1);
                         break;

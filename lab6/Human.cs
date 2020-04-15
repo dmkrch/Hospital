@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace doctor
+namespace lab6
 {
-    abstract class Human
+    class Human
     {
         public string Name { get; set; }
 

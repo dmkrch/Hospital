@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-namespace doctor
+namespace lab6
 {
     class Surgeon : Doctor
     {
@@ -18,6 +18,17 @@ namespace doctor
             ++_counter;
             Id = _counter;
         }
+
+        public void SortOperationsByName()
+        {
+            operationsList.Sort();
+        }
+        public void SortOperationsByLength()
+        {
+            operationsList.Sort(new OperationComparer());
+        }
+
+        public ISchedule schedule { get; set; } // this is variable for schedule 
 
         public int Id { get; set; }
 

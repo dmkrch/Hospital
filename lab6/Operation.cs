@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace doctor
+namespace lab6
 {
-    class Operation
+    class Operation : IComparable<Operation>
     {
         public Operation(string title, string difficulty, double successOperations, double complicatedOperations)
         {
@@ -12,6 +12,14 @@ namespace doctor
             Difficulty = difficulty;
             SuccessOperations = successOperations;
             ComplicatedOperations = complicatedOperations;
+        }
+
+        public int CompareTo(Operation op)
+        {
+            if (op != null)
+                return this.Title.CompareTo(op.Title);
+            else
+                throw new Exception("Unable to compare :(");
         }
 
         public string Title { get; set; }
