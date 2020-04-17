@@ -15,22 +15,29 @@ namespace lab6
             Qualification = qualification;
             ScienceDegree = scienceDegree;
 
+
             ++_counter;
             Id = _counter;
         }
+
+        public ISchedule schedule { get; set; }
+
+        public int Id { get; set; }
+
+
+        public delegate void displayMes(string mes);
+        public event displayMes displayMessage;
+
 
         public void SortOperationsByName()
         {
             operationsList.Sort();
         }
+       
         public void SortOperationsByLength()
         {
             operationsList.Sort(new OperationComparer());
         }
-
-        public ISchedule schedule { get; set; } // this is variable for schedule 
-
-        public int Id { get; set; }
 
         public void AddOperation(Operation operation)
         {
@@ -41,7 +48,7 @@ namespace lab6
         {
             for (int i = 0; i < operationsList.Count; ++i)
             {
-                Console.WriteLine("\tTITLE: " + operationsList[i].Title + "\tDIFFICULTY: " + operationsList[i].Difficulty + "\n\tSUCCESSED: " + operationsList[i].SuccessOperations + "\t\tCOMPLICATED: " + operationsList[i].ComplicatedOperations);
+                displayMessage?.Invoke("\tTITLE: " + operationsList[i].Title + "\tDIFFICULTY: " + operationsList[i].Difficulty + "\n\tSUCCESSED: " + operationsList[i].SuccessOperations + "\t\tCOMPLICATED: " + operationsList[i].ComplicatedOperations);
             }
         }
 

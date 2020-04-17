@@ -7,18 +7,36 @@ namespace lab6
 {
     class Program
     {
+
         static void Main()
         {
             SurgeonList surgeonList = new SurgeonList();
 
             surgeonList.InitSurgeons();
+            surgeonList.displayMessage += (mes) => Console.WriteLine(mes); // setting lambda to surgeonList for displaying information
+
+            surgeonList.SetDisplayMessageInSurgeon((mes) => Console.WriteLine(mes)); // passing lambda to surgeonList, that sets this lambda to event
+                                                                                     // in every object of Surgeon class ( surgeonList contains surgeons )
 
             while (true)
             {
-                int id;
-
+                int id = 0;
+                   
+                
                 Console.WriteLine("---------------------------------\n|  #1 Show info of surgeon      |\n|  #2 Sort operations by length |\n|  #3 Sort operations by name   |\n|  #4 Find appropriate doctor   |\n|  #5 Make an operation         |\n|  #6 Exit\t\t        |\n---------------------------------");
-                int choice = Int32.Parse(Console.ReadLine());
+                int choice = 0;
+                try
+                {
+                    choice = Int32.Parse(Console.ReadLine());
+                    if (choice > 6 || choice < 1)
+                        throw new Exception();
+                }
+                catch
+                {
+                    Console.WriteLine("wrong input");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
 
                 switch (choice)
                 {
@@ -28,7 +46,20 @@ namespace lab6
                         Console.Clear();
 
                         Console.Write("Enter id of surgeon ");
-                        id = Int32.Parse(Console.ReadLine()) - 1;
+
+                        try
+                        {
+                            id = Int32.Parse(Console.ReadLine()) - 1;
+                        }
+
+                        catch (System.FormatException)
+                        {
+                            Console.WriteLine("wrong input");
+                            Console.ReadLine();
+                            Console.Clear();
+
+                            break;
+                        }
 
                         Console.Clear();
 
