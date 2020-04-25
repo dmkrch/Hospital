@@ -4,25 +4,9 @@ using System.Text;
 
 namespace lab6
 {
-    enum Days
+    class ScheduleMethods
     {
-        Monday = 1,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday
-    }
-
-    interface ISchedule
-    {
-        List<Days> daysOfWork { get; set; }
-
-        string WorkTime { get; set; }
-
-
-        /*bool CheckAvailibility(string day)
+        public static bool CheckAvailibility(string day, List<Days> daysOfWork)
         {
             for (int i = 0; i < daysOfWork.Count; ++i)
             {
@@ -34,12 +18,12 @@ namespace lab6
         }
 
 
-        void ShowDaysOfWork()
+        public static void ShowDaysOfWork(List<Days> daysOfWork)
         {
             for (int i = 0; i < daysOfWork.Count; ++i)
             {
                 Console.Write(daysOfWork[i] + " ");
             }
-        }*/
+        }
     }
 }
