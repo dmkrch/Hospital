@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace lab6
 {
-    class SurgeonList : ScheduleMethods
+    class SurgeonList
     {
         public SurgeonList()
         {
@@ -164,7 +164,7 @@ namespace lab6
                 displayMessage?.Invoke("#" + (surgeonList[id].Id + 1) + "      NAME: " + surgeonList[id].Name + "\t\tAGE: " + surgeonList[id].Age + "\n\tWORK EXPERIENCE: " + surgeonList[id].WorkExperience + "\tQUALIFICATION: " + surgeonList[id].Qualification);
                 displayMessage?.Invoke("\n");
                 displayMessage?.Invoke("Days of work: ");
-                ShowDaysOfWork(surgeonList[id].schedule.daysOfWork);
+                ScheduleMethods.ShowDaysOfWork(surgeonList[id].schedule);
                 displayMessage?.Invoke("\n\t" + surgeonList[id].Name + "'s operations:\n");
                 surgeonList[id].ShowAllOperations();
             }
@@ -228,7 +228,7 @@ namespace lab6
                     displayMessage?.Invoke("\nWhat day you want to choose?");
                     string day = Console.ReadLine();
 
-                    if (CheckAvailibility(day, surgeonList[id].schedule.daysOfWork))
+                    if (ScheduleMethods.CheckAvailibility(day, surgeonList[id].schedule))
                     {
                         displayMessage?.Invoke("The doctor " + surgeonList[id].Name + " has " + surgeonList[id].GetOperationPercentage(title) * 100 + " % on success.\nDo u want to perform the operation?(1 - yes, 2 - no)  ");
                         int choice = 0;

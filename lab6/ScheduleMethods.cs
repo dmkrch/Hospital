@@ -6,11 +6,11 @@ namespace lab6
 {
     class ScheduleMethods
     {
-        public static bool CheckAvailibility(string day, List<Days> daysOfWork)
+        public static bool CheckAvailibility(string day, ISchedule schedule)
         {
-            for (int i = 0; i < daysOfWork.Count; ++i)
+            for (int i = 0; i < schedule.daysOfWork.Count; ++i)
             {
-                if (daysOfWork[i].ToString() == day)
+                if (schedule.daysOfWork[i].ToString() == day)
                     return true;
             }
 
@@ -18,11 +18,11 @@ namespace lab6
         }
 
 
-        public static void ShowDaysOfWork(List<Days> daysOfWork)
+        public static void ShowDaysOfWork(ISchedule schedule)
         {
-            for (int i = 0; i < daysOfWork.Count; ++i)
+            for (int i = 0; i < schedule.daysOfWork.Count; ++i)
             {
-                Console.Write(daysOfWork[i] + " ");
+                Console.Write(schedule.daysOfWork[i] + " ");
             }
         }
     }
